@@ -15,8 +15,8 @@ url: https://example.com
 features:
   - keys
   - display
-  - studio  # Remove this line if your keyboard will not support ZMK Studio
   - pointer
+  #- studio  # Remove this line if your keyboard will not support ZMK Studio
 
 requires:
   - pro_micro
