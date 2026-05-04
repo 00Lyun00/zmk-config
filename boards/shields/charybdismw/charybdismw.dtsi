@@ -8,7 +8,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &default_layout;
+        zmk,physical-layout = &default_transform;
     };
 
     kscan: kscan {
