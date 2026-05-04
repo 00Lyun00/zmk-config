@@ -9,6 +9,13 @@
 
 
 #define MAIN  0
+#define QWERT 1
+#define NUM   2
+#define NAV   3
+#define SYMB  4
+#define FUNC  5
+#define MOUSE 6
+#define EXTRA 7
 
 #define MEH(key) LA(LS(LC(key)))
 
@@ -200,11 +207,85 @@
         Main {
             label = "Main";
             bindings = <
-  &kp TAB  &kp Q  &kp W      &kp F      &kp P  &kp B           &kp J    &kp L      &kp U    &kp Y     &kp MINUS  &kp BSPC
-  &kp ESC  &art_lt MOUSE A  &kp R      &kp S      &kp T  &kp G     &kp M    &kp N      &kp E    &kp I  &kp O    &kp APOS
-&kp LSHFT  &art_lt EXTRA Z  &kp X      &kp C      &kp D  &kp V           &kp K    &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+    &kp Q            &kp W      &kp F      &kp P     &kp B     &kp J     &kp L    &kp U    &kp Y      &kp MINUS  
+    &art_lt MOUSE A  &kp R      &kp S      &kp T     &kp G     &kp M    &kp N    &kp E      &kp I  &kp O    
+    &art_lt EXTRA Z  &kp X      &kp C      &kp D     &kp V     &kp K    &kp H    &kp COMMA  &kp DOT  &kp FSLH
                      &kp LSHFT  &lt NUM SPACE  &lt SYMB DEL    &lt NAV BSPC  &lt FUNC RET
             >;
         };
+
+        Qwert {
+            label = "Qwert";
+            bindings = <
+    &kp Q  &kp W      &kp E      &kp R  &kp T            &kp Y    &kp U      &kp I    &kp O     &kp P    
+    &kp A  &kp S      &kp D      &kp F  &kp G            &kp H    &kp J      &kp K    &kp L  &kp SEMI   
+    &kp Z  &kp X      &kp C      &kp V  &kp B            &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH 
+                             &trans    &trans  &trans    &trans   &trans
+            >;
+        };
+
+        Num {
+            label = "Num";
+            bindings = <
+     &kp LC(B) &kp LC(O)   &kp LC(F) &kp LC(S) &kp LS(LG(S))        &kp ASTRK  &kp N7   &kp N8  &kp N9  &kp MINUS  
+     &kp LGUI &sk LEFT_ALT &sk LCTRL &sk LSHFT &kp LC(A)            &kp FSLH   &kp N4   &kp N5  &kp N6  &kp PLUS   
+     &kp LC(Z) &kp LC(X)  &kp LC(C) &kp LC(V) &kp LC(Y)             &kp EQUAL  &kp N1   &kp N2  &kp N3  &kp N0   
+                               &kp LGUI  &kp SPACE    &trans              &kp BSPC  &kp DOT
+            >;
+        };
+
+        Nav {
+            label = "Nav";
+            bindings = <
+    &kp EXCL   &kp PG_UP &kp UP   &kp PG_DN  &kp LS(LA(TAB))     &bootloader   &none   &kp RCTRL  &kp RALT  &tog QWERT   
+    &kp HOME   &kp LEFT  &kp DOWN &kp RIGHT  &kp END             &to MAIN  &sk LSHFT   &sk LCTRL  &sk LEFT_ALT &sk LGUI  
+    &kp GRAVE  &kp LS(TAB)  &none    &kp TAB    &kp LA(TAB)     &kp LC(Y) &kp LC(V)   &kp LC(C)   &kp LC(X)   &kp LC(Z)
+                        &kp BSPC  &kp SPACE  &kp RET                   &trans    &none
+            >;
+        };
+
+
+        SYMB {
+            label = "SYMB";
+            bindings = <
+       &kp ESC  &kp LS(TAB) &kp LALT  &kp TAB &kp LC(LS(S))                &kp LT    &auto_chv  &kp GT   &auto_sqt &kp MINUS  
+       &kp LC(SEMI)  &tempsym &auto_elp &sk LSHFT &kp LG(V)                &kp LPAR  &auto_par  &kp RPAR &kp SQT   &kp SEMI   
+       &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none    &kp LBKT  &auto_bkt  &kp RBKT &auto_dqt &kp EXCL   
+                                      &none      &none  &none                &none  &none
+            >;
+        };
+
+        Func {
+            label = "FUNC";
+            bindings = <
+  &kp F9  &kp F10  &kp F11  &kp F12    &kp C_VOL_UP            &kp LC(T)  &kp LEFT         &kp LC(L) &kp RIGHT     &none      
+  &kp F5  &kp F6   &kp F7   &kp F8     &kp C_MUTE              &kp F5     &kp LA(LEFT)     &mkp MCLK &kp LA(RIGHT) &none      
+  &kp F1  &kp F2   &kp F3   &kp F4     &kp C_VOL_DN            &kp LC(W)  &kp LS(LC(TAB))  &none     &kp LC(TAB)   &kp LA(F4)
+                               &bt BT_PRV  &none  &bt BT_NXT     &bt BT_CLR     &none
+            >;
+        };
+
+
+        Mouse {
+            label = "MOUSE";
+            bindings = <
+     &trans  &kp F17     &kp F18     &kp F19     &kp LT       &none &none &none &none &none 
+     &trans  &kp F16     &kp LBKT     &kp RBKT    &kp TILDE   &none &none &none &none &none 
+     &trans  &kp F13     &kp F14     &kp F15     &kp GT       &none &none &none &none &none
+                              &none   &none   &none                 &none   &none
+            >;
+        };
+
+        Extra {
+            label = "EXTR";
+            bindings = <
+      &none  &kp MEH(W)  &kp MEH(F)  &kp MEH(P)  &kp MEH(B)       &none &none &none &none &none 
+      &none  &kp MEH(R)  &kp MEH(S)  &kp MEH(T)  &kp MEH(G)       &none &none &none &none &none 
+      &none  &kp MEH(X)  &kp MEH(C)  &kp MEH(D)  &kp MEH(V)       &none &none &none &none &none
+                              &kp MEH(Q)  &kp MEH(A)  &kp MEH(Z)   &none   &none
+            >;
+        };
+
+
     };
 };
