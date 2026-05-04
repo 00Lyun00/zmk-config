@@ -14,7 +14,9 @@ url: https://example.com
 # See https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files#features
 features:
   - keys
+  - display
   - studio  # Remove this line if your keyboard will not support ZMK Studio
+  - pointer
 
 requires:
   - pro_micro
