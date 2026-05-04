@@ -1,5 +1,5 @@
 / {
-    physical_layout0: default_layout {
+    default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "default_layout";
     };
