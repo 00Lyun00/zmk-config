@@ -4,7 +4,7 @@
 
 #include "charybdismw.dtsi"
 
-&default_transform {
+&default_layout {
     // Set this to the number of columns on the left side.
     col-offset = <5>;
 };
