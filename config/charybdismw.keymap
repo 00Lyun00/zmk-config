@@ -198,7 +198,7 @@
 //end of macro list
     };
 
-
+{
     keymap {
         compatible = "zmk,keymap";
 
@@ -286,3 +286,4 @@
 
 
     };
+};
