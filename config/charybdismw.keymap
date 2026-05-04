@@ -1,0 +1,207 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+
+#define MAIN  0
+
+#define MEH(key) LA(LS(LC(key)))
+
+
+&lt {
+    tapping-term-ms = <150>;
+    flavor = "balanced";
+    quick-tap-ms = <80>;
+    require-prior-idle-ms = <50>;
+};
+
+/ {
+    behaviors {
+        art_lt: behavior_art_lt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <500>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
+};
+
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_main {
+            timeout-ms = <50>;
+            bindings = <&to MAIN>;
+            key-positions = <1 4>;
+        };
+
+        combo_alt {
+            timeout-ms = <50>;
+            bindings = <&kp LALT>;
+            key-positions = <13 14>;
+        };
+
+        combo_ctrl {
+            timeout-ms = <50>;
+            bindings = <&kp LCTRL>;
+            key-positions = <14 15>;
+        };
+
+        combo_shift {
+            timeout-ms = <50>;
+            bindings = <&kp LSHFT>;
+            key-positions = <15 16>;
+        };
+
+        combo_lck {
+            timeout-ms = <50>;
+            bindings = <&mkp LCLK>;
+            key-positions = <19 20>;
+        };
+
+        combo_DGSK {
+            timeout-ms = <50>;
+            bindings = <&mo MOUSE>;
+            key-positions = <20 21>;
+        };
+
+        combo_rck {
+            timeout-ms = <50>;
+            bindings = <&mkp RCLK>;
+            key-positions = <21 22>;
+        };
+
+        combo_change {
+            timeout-ms = <100>;
+            bindings = <&lan_chan>;
+            key-positions = <25 26>;
+        };
+
+
+    };
+};
+
+
+
+
+/ {
+
+    macros {
+
+// language change and layer change at the same time
+        lan_chan: lan_chan {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_lan_chan";
+            #binding-cells = <0>;
+            bindings 
+                = <&macro_press &tog QWERT>
+                , <&macro_tap &kp RALT>
+                , <&macro_release &tog QWERT>
+                ;
+        };
+
+// automatically write two parentheses
+        auto_par: auto_par {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_auto_par";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>
+                ;
+        };
+
+// automatically write two brackets
+        auto_bkt: auto_bkt {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_auto_bkt";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LBKT &kp RBKT &kp LEFT>
+                ;
+        };
+
+// automatically write two chevrons
+        auto_chv: auto_chv {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_auto_chv";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LT &kp GT &kp LEFT>
+                ;
+        };
+
+// automatically write two quotations
+        auto_dqt: auto_dqt {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_auto_dqt";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp SQT &kp SQT>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp LEFT>
+
+                ;
+        };
+
+// automatically write two small quotations
+        auto_sqt: auto_sqt {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_auto_sqt";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SQT &kp SQT &kp LEFT>
+                ;
+        };
+
+// automatically write temperature symbol
+        tempsym: tempsym {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_tempsymi";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_wait_time 5>
+                , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N6>
+                , <&macro_release &kp LALT>
+
+                ;
+        };
+
+// automatically write three periods
+        auto_elp: auto_elp {
+            compatible = "zmk,behavior-macro";
+            label = "ZM_auto_elp";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp DOT &kp DOT &kp DOT>
+                ;
+        };
+
+
+
+//end of macro list
+    };
+
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        Main {
+            label = "Main";
+            bindings = <
+  &kp TAB  &kp Q  &kp W      &kp F      &kp P  &kp B           &kp J    &kp L      &kp U    &kp Y     &kp MINUS  &kp BSPC
+  &kp ESC  &art_lt MOUSE A  &kp R      &kp S      &kp T  &kp G     &kp M    &kp N      &kp E    &kp I  &kp O    &kp APOS
+&kp LSHFT  &art_lt EXTRA Z  &kp X      &kp C      &kp D  &kp V           &kp K    &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                     &kp LSHFT  &lt NUM SPACE  &lt SYMB DEL    &lt NAV BSPC  &lt FUNC RET
+            >;
+        };
+    };
+};
