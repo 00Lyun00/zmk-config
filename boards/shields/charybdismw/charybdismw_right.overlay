@@ -5,7 +5,7 @@
 #include "charybdismw.dtsi"
 #include "charybdis_pmw3610.dtsi"
 
-&default_layout {
+&default_transform {
     // Set this to the number of columns on the left side.
     col-offset = <5>;
 };
@@ -19,6 +19,16 @@
         , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 };
+
+
+&spi0 {
+    status = "okay";
+};
+
+&trackball {
+    status = "okay";
+};
+
 
 // https://github.com/badjeff/zmk-pmw3610-driver
 / {
