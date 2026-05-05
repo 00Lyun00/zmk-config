@@ -3,6 +3,7 @@
 // instructions.
 
 #include "charybdismw.dtsi"
+#include "charybdis_pmw3610.dtsi"
 
 &default_layout {
     // Set this to the number of columns on the left side.
@@ -57,10 +58,10 @@
     };
 };
 
+// https://github.com/badjeff/zmk-pmw3610-driver
 / {
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
-
   };
 };
