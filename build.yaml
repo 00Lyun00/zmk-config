@@ -19,9 +19,9 @@
 #
 ---
 include:
-  - board: nice_nano
+  - board: nice_nano@2.0.0//zmk
     shield: charybdismw_left nice_view
-  - board: nice_nano
+  - board: nice_nano@2.0.0//zmk
     shield: charybdismw_right nice_view
-  - board: nice_nano
+  - board: nice_nano@2.0.0//zmk
     shield: settings_reset
