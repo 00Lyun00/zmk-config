@@ -5,7 +5,7 @@
 #include "charybdismw.dtsi"
 #include "charybdis_pmw3610.dtsi"
 
-&kscan {
+&kscan0 {
     // Replace these comments with the GPIO pins in the matrix for the left side.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
     col-gpios
