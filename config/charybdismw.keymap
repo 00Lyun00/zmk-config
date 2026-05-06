@@ -71,6 +71,7 @@
         #binding-cells = <1>;
         time-to-live-ms = <750>;
     };
+};
 
 
 
