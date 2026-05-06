@@ -106,7 +106,6 @@
 // language change and layer change at the same time
         lan_chan: lan_chan {
             compatible = "zmk,behavior-macro";
-            label = "ZM_lan_chan";
             #binding-cells = <0>;
             bindings 
                 = <&macro_press &tog QWERT>
@@ -118,7 +117,6 @@
 // automatically write two parentheses
         auto_par: auto_par {
             compatible = "zmk,behavior-macro";
-            label = "ZM_auto_par";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>
@@ -128,7 +126,6 @@
 // automatically write two brackets
         auto_bkt: auto_bkt {
             compatible = "zmk,behavior-macro";
-            label = "ZM_auto_bkt";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LBKT &kp RBKT &kp LEFT>
@@ -138,7 +135,6 @@
 // automatically write two chevrons
         auto_chv: auto_chv {
             compatible = "zmk,behavior-macro";
-            label = "ZM_auto_chv";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LT &kp GT &kp LEFT>
@@ -148,7 +144,6 @@
 // automatically write two quotations
         auto_dqt: auto_dqt {
             compatible = "zmk,behavior-macro";
-            label = "ZM_auto_dqt";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
@@ -162,7 +157,6 @@
 // automatically write two small quotations
         auto_sqt: auto_sqt {
             compatible = "zmk,behavior-macro";
-            label = "ZM_auto_sqt";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp SQT &kp SQT &kp LEFT>
@@ -172,7 +166,6 @@
 // automatically write temperature symbol
         tempsym: tempsym {
             compatible = "zmk,behavior-macro";
-            label = "ZM_tempsymi";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT>
@@ -186,7 +179,6 @@
 // automatically write three periods
         auto_elp: auto_elp {
             compatible = "zmk,behavior-macro";
-            label = "ZM_auto_elp";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp DOT &kp DOT &kp DOT>
