@@ -18,8 +18,7 @@ features:
   - display
   #- studio  # Remove this line if your keyboard will not support ZMK Studio
 
-requires:
-  - pro_micro
+requires: [pro_micro]
 
 siblings:
   - charybdismw_left
