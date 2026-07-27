@@ -3,13 +3,12 @@
 // instructions.
 
 #include "charybdismw.dtsi"
-#include "charybdis_pmw3610.dtsi"
+
 
 &kscan0 {
-    // Replace these comments with the GPIO pins in the matrix for the left side.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
-    col-gpios
-
+	compatible = "zmk,kscan-gpio-matrix";
+	
+	col-gpios
 		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -17,12 +16,4 @@
 		, <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
-};
-
-// https://github.com/badjeff/zmk-pmw3610-driver
-/ {
-  trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-  };
 };
