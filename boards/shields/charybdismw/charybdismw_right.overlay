@@ -4,13 +4,20 @@
 
 #include "charybdismw.dtsi"
 #include "charybdis_pmw3610.dtsi"
+#include "charybdis_pointer.dtsi"
 
 &default_transform {
     // Set this to the number of columns on the left side.
     col-offset = <6>;
 };
 
+&five_column_transform {
+	col-offset = <5>;
+};
+
 &kscan0 {
+	compatible = "zmk,kscan-gpio-matrix";
+
     col-gpios
 		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -22,19 +29,8 @@
 };
 
 
-&spi0 {
+/* enable the listener on central */
+&trackball_listener {
     status = "okay";
-};
-
-&trackball {
-    status = "okay";
-};
-
-
-// https://github.com/badjeff/zmk-pmw3610-driver
-/ {
-  trackball_listener {
-    compatible = "zmk,input-listener";
     device = <&trackball>;
-  };
 };
