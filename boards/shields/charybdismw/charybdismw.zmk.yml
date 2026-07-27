@@ -15,6 +15,7 @@ url: https://example.com
 features:
   - keys
   - pointer
+  - display
   #- studio  # Remove this line if your keyboard will not support ZMK Studio
 
 requires:
