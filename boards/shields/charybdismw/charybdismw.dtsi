@@ -7,12 +7,9 @@
 
 / {
     chosen {
-        zmk,default-layout = &default_layout;
+        zmk,physical-layout = &default_layout;
     };
 
-    vbatt: vbatt {
-	compatible = "zmk,battery-nrf-vddh";
-    };
 
   default_transform: default_transform {
         compatible = "zmk,matrix-transform";
